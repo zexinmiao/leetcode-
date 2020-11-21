@@ -1,0 +1,29 @@
+public class BubbleSortTest {
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{3,4,5,32,2};
+        bubbleSort(arr);
+        for (int i = 0; i <arr.length ; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+
+
+    public static void bubbleSort(int[] arr){
+        if(arr == null || arr.length < 2){
+            return ;
+        }
+        for (int i = 0; i <arr.length - 1 ; i++)  //长度为8的数组第一次需要比较7次，其他长度的同理。
+            for (int j = 0; j <arr.length - 1 - i; j++) {   //最后的元素越来越多，所以要比较的次数将会越来越少。
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+
+            }
+
+    }
+
+}
